@@ -21,7 +21,7 @@ def download(url, output_dir="."):
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': os.path.join(output_dir, '%(title)s.%(ext)s'),  # Custom output template
+        'outtmpl': os.path.join("../storage/music/",output_dir, '%(title)s.mp3'),  # Custom output template
     }
 
     try:
@@ -37,7 +37,8 @@ def download(url, output_dir="."):
     except yt_dlp.utils.DownloadError as e:
         print(f"Download error: {e}")
 
-if __name__ == "__main__":
-    output_dir = "audio"
-    url = input("Enter the URL of the video: ")
-    download(url, output_dir.strip())  # Remove leading/trailing whitespace from output_dir
+while True:
+    if __name__ == "__main__":
+        output_dir = "audio"
+        url = input("Enter the URL of the video: ")
+        download(url, output_dir.strip())  # Remove leading/trailing whitespace from output_dir
